@@ -9,3 +9,11 @@ class enigma:
     self.a = a
     self.b = b
     self.c = c
+
+  def draaien(self, aantal_draaien):
+    aantal_draaien = aantal_draaien % 26
+    geschud_alfabet = list(alfabet)
+    for i in range(aantal_draaien):
+       geschud_alfabet.insert(0, geschud_alfabet[-1])
+       geschud_alfabet.pop(-1)
+    return geschud_alfabet
