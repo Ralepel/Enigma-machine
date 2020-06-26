@@ -64,4 +64,10 @@ class enigma:
     geschud_alfabet = self.reversed_draaien(rotor)
     return geschud_alfabet[idx]
     
-gegeven_tekst = input("Typ een woord of zin")
+a = int(input("Stand van rotor 1: "))
+b = int(input("Stand van rotor 2: "))
+c = int(input("Stand van rotor 3: "))
+
+Enigma = enigma(a, b, c)
+encrypt = Enigma.encrypt_tekst(gegeven_tekst)
+print("Uw encrypte tekst is:", encrypt)
