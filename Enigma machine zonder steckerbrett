@@ -31,8 +31,13 @@ class enigma:
     encrypted_tekst = []
     tekst = tekst.lower()
     tekst.split()
-            
-      encrypted_letter = self.volgende_letter(self.a, encrypted_letter)
+    
+    for char in list(tekst) :
+      if not char in alfabet :
+        encrypted_tekst.append(char)
+        continue 
+     
+      encrypted_letter = self.volgende_letter(self.a, char)
       encrypted_letter = self.volgende_letter(self.b, encrypted_letter)  
       encrypted_letter = self.volgende_letter(self.c, encrypted_letter)  
 
