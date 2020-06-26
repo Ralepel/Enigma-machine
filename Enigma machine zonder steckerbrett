@@ -22,6 +22,15 @@ class enigma:
     encrypted_tekst = []
     tekst = tekst.lower()
     tekst.split()
+    
+    for letter in tekst:
+      self.a += 1
+      if self.a % 26 == 0:
+            self.b += 1
+            self.c = 0
+      if self.b % 26 == 0 and self.a % 26 != 0 and self.b >= 25:
+            self.c += 1
+            self.b = 1
 
   def volgende_letter(self, rotor, char) :
     geschud_alfabet = self.draaien(rotor)
@@ -38,6 +47,6 @@ class enigma:
   def vorige_letter(self, rotor, char) :
     idx = alfabet.index(char)
     geschud_alfabet = self.reversed_draaien(rotor)
-    return verschuifd_alfabet[idx]
+    return geschud_alfabet[idx]
     
 gegeven_tekst = input("Typ een woord of zin")
