@@ -22,3 +22,5 @@ class enigma:
     geschud_alfabet = self.draaien(rotor)
     letterIndex = alfabet.index(char)
     return geschud_alfabet[letterIndex]
+    
+gegeven_tekst = input("Typ een woord of zin")
