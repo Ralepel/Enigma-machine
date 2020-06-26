@@ -28,4 +28,12 @@ class enigma:
     letterIndex = alfabet.index(char)
     return geschud_alfabet[letterIndex]
     
+  def reversed_draaien(self, aantal_draaien):
+    geschud_alfabet = list(alfabet)
+    for i in range(aantal_draaien):
+        geschud_alfabet.append(geschud_alfabet[0])
+        geschud_alfabet.pop(0)
+    return geschud_alfabet
+
+    
 gegeven_tekst = input("Typ een woord of zin")
