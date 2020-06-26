@@ -31,6 +31,21 @@ class enigma:
       if self.b % 26 == 0 and self.a % 26 != 0 and self.b >= 25:
             self.c += 1
             self.b = 1
+            
+      encrypted_letter = self.volgende_letter(self.a, encrypted_letter)
+      encrypted_letter = self.volgende_letter(self.b, encrypted_letter)  
+      encrypted_letter = self.volgende_letter(self.c, encrypted_letter)  
+
+      reversed_alfabet = [letter for letter in reversed(alfabet)]
+      
+      encrypted_letter = reversed_alfabet[alfabet.index(encrypted_letter)]
+      encrypted_letter = self.vorige_letter(self.c, encrypted_letter)
+      encrypted_letter = self.vorige_letter(self.b, encrypted_letter)
+      encrypted_letter = self.vorige_letter(self.a, encrypted_letter)  
+
+      encrypted_tekst.append(encrypted_letter)
+  
+  return str.join("", encrypted_tekst) 
 
   def volgende_letter(self, rotor, char) :
     geschud_alfabet = self.draaien(rotor)
