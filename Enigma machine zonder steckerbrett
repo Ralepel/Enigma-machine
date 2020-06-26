@@ -18,6 +18,15 @@ class enigma:
        geschud_alfabet.pop(-1)
     return geschud_alfabet
 
+  def rotors_draaien(self, plaats) :
+    self.a = self.a + 1
+
+    if(plaats % 26 == 0):
+      self.b = self.b + 1
+
+    if(plaats % (26*26)==0):     
+      self.c = self.c + 1
+
   def encrypt_tekst(self, tekst):
     encrypted_tekst = []
     tekst = tekst.lower()
