@@ -26,7 +26,7 @@ class enigma:
   def volgende_letter(self, rotor, char) :
     geschud_alfabet = self.draaien(rotor)
     letterIndex = alfabet.index(char)
-    return geschud_alfabet[letterIndex]
+    return geschud_alfabet[idx]
     
   def reversed_draaien(self, aantal_draaien):
     geschud_alfabet = list(alfabet)
@@ -35,5 +35,9 @@ class enigma:
         geschud_alfabet.pop(0)
     return geschud_alfabet
 
+  def vorige_letter(self, rotor, char) :
+    idx = alfabet.index(char)
+    geschud_alfabet = self.reversed_draaien(rotor)
+    return verschuifd_alfabet[idx]
     
 gegeven_tekst = input("Typ een woord of zin")
