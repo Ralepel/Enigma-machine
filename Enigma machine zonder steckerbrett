@@ -20,6 +20,11 @@ class enigma:
     
 gegeven_tekst = input("Typ een woord of zin")
 
+   def encrypt_text(self, text):
+    encrypted_text = []
+    text = text.lower()
+    text.split()
+
    def volgende_letter(self, rotor, char) :
     geschud_alfabet = self.draaien(rotor)
     letterIndex = alfabet.index(char)
